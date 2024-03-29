@@ -1,0 +1,5 @@
+- a lista 'hospedes' em CadastrarHospedes deve ser menor ou igual a capacidade da suite a ser reservada;
+
+- se a reserva for superior a 10 dias, havera desconto de 10% no valor;
+
+- 

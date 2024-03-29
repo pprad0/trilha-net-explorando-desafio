@@ -17,14 +17,18 @@ namespace DesafioProjetoHospedagem.Models
         {
             // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
             // *IMPLEMENTE AQUI*
-            if (true)
+            
+            if (Suite.Capacidade >= hospedes.Count)
             {
                 Hospedes = hospedes;
-            }
+                Console.WriteLine("Hóspedes cadastrados com sucesso.");
+            }   
             else
             {
                 // TODO: Retornar uma exception caso a capacidade seja menor que o número de hóspedes recebido
                 // *IMPLEMENTE AQUI*
+
+                Console.WriteLine("Erro: capacidade de suíte não suficiente para o número de hóspedes.");
             }
         }
 
@@ -37,7 +41,10 @@ namespace DesafioProjetoHospedagem.Models
         {
             // TODO: Retorna a quantidade de hóspedes (propriedade Hospedes)
             // *IMPLEMENTE AQUI*
-            return 0;
+            if(Hospedes == null)
+                return 0;
+            
+            return Hospedes.Count;
         }
 
         public decimal CalcularValorDiaria()
@@ -45,13 +52,14 @@ namespace DesafioProjetoHospedagem.Models
             // TODO: Retorna o valor da diária
             // Cálculo: DiasReservados X Suite.ValorDiaria
             // *IMPLEMENTE AQUI*
-            decimal valor = 0;
+            decimal valor = DiasReservados * Suite.ValorDiaria ;
+            
 
             // Regra: Caso os dias reservados forem maior ou igual a 10, conceder um desconto de 10%
             // *IMPLEMENTE AQUI*
-            if (true)
+            if (DiasReservados >= 10)
             {
-                valor = 0;
+                valor *= 0.9M;
             }
 
             return valor;
